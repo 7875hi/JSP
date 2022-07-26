@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+table {
+  border-collapse: collapse;
+}
+
+#sq, #pq, #pqre, #em, #emre {
+	border-color: white;
+}
+
+#jobu, #xbu {
+	background-color: rgb(163,207,120);
+	border-color: rgb(163,207,120);
+	border-radius: 5px;
+}
+
+
+
+label {
+	color: red; 
+}
