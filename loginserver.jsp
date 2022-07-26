@@ -51,17 +51,30 @@
 		
 		// rs.next() : 아래열로 한 칸 이동해라?
 		if(rs.next()){  // ResultSet에 데이터가 있으면
-			// login을 해라
+			// login을 해라(session)
+			// session영역에 id값을 유지시킴으로 로그인 된 채로 서비스 이용
+			session.setAttribute("id", id);  // 로그인이 된 채로
 			
+			// 메인페이지로 이동
+			out.println("<script>");
+			out.println("location.href='main.jsp'");
+			out.println("</script>");
 		}
 		else{  // 그렇지 않으면
-			// loginform.jsp를 실행
+			// loginform 화면으로 이동
+			out.println("<script>");
+			out.println("location.href='loginform.jsp'");
+			out.println("</script>");
 			
 		}
 		
 	}catch(Exception e){
 		//System.out.println("DB연결 실패");
 		e.printStackTrace();
+	}finally{  // 메모리 관리 (사용한것들을 닫아줘야함)
+		conn.close();
+		rs.close();
+		pstmt.close();
 	}
 	
 %>
