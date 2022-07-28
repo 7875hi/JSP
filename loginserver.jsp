@@ -57,7 +57,7 @@
 			
 			// 메인페이지로 이동
 			out.println("<script>");
-			out.println("location.href='main.jsp'");
+			out.println("location.href='boardlist.jsp'");
 			out.println("</script>");
 		}
 		else{  // 그렇지 않으면
